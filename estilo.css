@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+
+    body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f0f0;
+    }
+
+    nav.menu {
+    background-color: #2c3e50;
+    }
+
+    .menu > ul {
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    }
+
+    .menu ul li {
+    position: relative;
+    }
+
+    .menu > ul > li > a {
+    display: block;
+    padding: 15px 25px;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .menu > ul > li > a:hover {
+    background-color: #34495e;
+    color: #1abc9c;
+    }
+
+    /* Submenús */
+    .menu .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #34495e;
+    list-style: none;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+    pointer-events: none;
+    }
+
+    .menu .submenu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #ecf0f1;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .menu .submenu li a:hover {
+    background-color: #1abc9c;
+    color: #fff;
+    }
+
+    
+    .menu li.has-submenu:hover .submenu {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+    }
+
+    .has-submenu > a::after {
+    content: " ▼";
+    font-size: 0.7em;
+    }
